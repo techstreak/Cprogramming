@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    char you[40], p[40];
+    int lp;
+
+    printf("Enter the your name: ");
+    fgets(you, sizeof(you), stdin);
+
+    printf("Enter the partner name: ");
+    fgets(p, sizeof(p), stdin);
+
+    srand(time(NULL));
+
+    lp = rand() % 21 + 80;
+
+    printf("Love Percentage between:\n");
+    printf("%s& %s is:", p, you);
+    printf("%d",lp);
+
+    return 0;
+}
