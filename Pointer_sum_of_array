@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h> // Include <stdlib.h> for system() function
+
+int main(void)
+{
+    int numArray[10];
+    int i, sum = 0;
+    int *ptr;
+
+    printf("\nEnter 10 elements:\n");
+
+    //Accept the 10 elements from the user in the array.
+    for (i = 0; i < 10; i++)
+    {
+        scanf("%d", &numArray[i]);
+    }
+
+    //address of first element
+    ptr = numArray;
+
+    //fetch the value from the location pointed by the pointer variable.
+    for (i = 0; i < 10; i++)
+    {
+        sum = sum + *ptr;
+        ptr++;
+    }
+
+    printf("The sum of array elements: %d\n", sum);
+
+    return 0;
+}
