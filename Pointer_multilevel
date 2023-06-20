@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h> // Include <stdlib.h> for system() function
+
+int main(void)
+{
+    int s = 2, *r = &s, **q = &r, ***p = &q;
+
+    printf("%d", p[0][0][0]);
+
+    return 0;
+}
