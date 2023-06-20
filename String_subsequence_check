@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h> // Include <stdlib.h> for system() function
+
+int check_subsequence(char[], char[]);
+
+int main(void) {
+   int flag;
+   char s1[1000], s2[1000];
+
+   printf("Input first string:\n");
+   fgets(s1, sizeof(s1), stdin);
+
+   printf("Input second string:\n");
+   fgets(s2, sizeof(s2), stdin);
+
+   /** Passing the smaller length string first */
+
+   if (strlen(s1) < strlen(s2))
+      flag = check_subsequence(s1, s2);
+   else
+      flag = check_subsequence(s2, s1);
+
+   (flag) ? printf("YES\n") : printf("NO\n");
+
+   return 0;
+}
+
+int check_subsequence(char a[], char b[]) {
+   int c, d;
+
+   c = d = 0;
+
+   while (a[c] != '\0') {
+      while ((a[c] != b[d]) && b[d] != '\0') {
+         d++;
+      }
+      if (b[d] == '\0')
+         break;
+      d++;
+      c++;
+   }
+   if (a[c] == '\0')
+      return 1;
+   else
+      return 0;
+}
